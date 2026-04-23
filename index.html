@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>
+            My Web Page
+        </title>
+        
+        <style>
+            .row{
+                width: 720px;
+                display: flex;
+                justify-content: center;
+                gap: 50px;
+                padding: 0px;
+                margin: 15px auto 15px auto ;
+            }
+
+            .body{
+                height: 100vh;
+                display: flex;
+                overflow: hidden;
+
+            }
+            .image-container {
+                width: 250px;
+                display: table-cell;
+                vertical-align: middle;
+                padding: 20px;
+                transform-origin: bottom center;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 1;
+            }
+
+            .image-container img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                vertical-align: middle;
+            }
+
+            .image-container img:hover {
+                transform: scale(var(--scale));
+                transition: transform 0.3s ease;
+                --scale:1.05;
+            }
+
+            .fix-move {
+                transform: translateY(50px) scale(1.1);
+            }
+
+        </style>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js"></script>
+
+    </head>
+
+
+    <body style="background-color: lavender;">
+
+        <div class="row">
+
+            <div class="image-container">
+                <img id="record 1" src="img/Record_1.svg" onmouseover="this.src='img/Record_2.svg';" onmouseout="this.src='img/Record_1.svg';" style="--scale:1.8;" width="200" height="200"/>
+            </div>
+
+            <div class="image-container">
+                <img id="memory 1" src="img/Memory_1.svg" onmouseover="this.src='img/Memory_2.svg';" onmouseout="this.src='img/Memory_1.svg';" style="--scale:1.4;" width="220" height="200"/>
+            </div>
+
+            <div class="image-container">
+                <img id="alarm 1" src="img/Alarm_1.svg" onmouseover="this.src='img/Alarm_2.svg';" onmouseout="this.src='img/Alarm_1.svg';" style="--scale:1.2;" width="300" height="250"/>
+            </div>
+
+        </div>
+        
+        <div class="row">
+
+            <div class="image-container">
+                <img id="time 1" src="img/Time_1.svg" onmouseover="this.src='img/Time_2.svg'; this.classList.add('fix-move');" onmouseout="this.src='img/Time_1.svg'; this.classList.remove('fix-move');" style="--scale:1.1;"width="250" height="200"/>
+            </div>
+
+            <div class="image-container">
+                <img id="insight 1" src="img/Insight_1.svg" onmouseover="this.src='img/Insight_2.svg';" onmouseout="this.src='img/Insight_1.svg';" style="--scale:2.8;"width="180" height="170"/>
+            </div>
+
+            <div class="image-container">
+                <img id="control 1" src="img/Control_1.svg" onmouseover="this.src='img/Control_2.svg';" onmouseout="this.src='img/Control_1.svg';" style="--scale:1.1;" width="220" height="200"/>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="image-container">
+                <img id="health 1" src="img/Health_1.svg" onmouseover="this.src='img/Health_2.svg';" onmouseout="this.src='img/Health_1.svg';" style="--scale:1.2;" width="220" height="220"/>
+            </div>
+
+            <div class="image-container">
+                <img id="profile 1" src="img/Profile_1.svg" onmouseover="this.src='img/Profile_2.svg';" onmouseout="this.src='img/Profile_1.svg';" style="--scale:1.1; " width="210" height="210"/>
+            </div>
+
+            <div class="image-container">
+                <img id="mood 1" src="img/Mood_1.svg" onmouseover="this.src='img/Mood_2.svg';" onmouseout="this.src='img/Mood_1.svg';" style="--scale:1.1;" width="200" height="200"/>
+            </div>
+
+        </div>
+
+        <script>
+            var sound1 = new buzz.sound("sound/record_sound.mp3");
+            var sound2 = new buzz.sound("sound/memory_sound.mp3");
+            var sound3 = new buzz.sound("sound/alarm_sound.mp3");
+            var sound4 = new buzz.sound("sound/time_sound2.mp3");
+            var sound5 = new buzz.sound("sound/insight_sound2.mp3");
+            var sound6 = new buzz.sound("sound/control_sound.mp3");
+            var sound7 = new buzz.sound("sound/health_sound.mp3");
+            var sound8 = new buzz.sound("sound/profile_sound.mp3");
+            var sound9 = new buzz.sound("sound/mood_sound.mp3");
+
+            window.onload = function() {
+                document.getElementById('record 1').addEventListener('mouseover', function() {sound1.play();});
+                document.getElementById('memory 1').addEventListener('mouseover', function() {sound2.play();});
+                document.getElementById('alarm 1').addEventListener('mouseover', function() {sound3.play();});
+                document.getElementById('time 1').addEventListener('mouseover', function() {sound4.play();});
+                document.getElementById('insight 1').addEventListener('mouseover', function() {sound5.play();});
+                document.getElementById('control 1').addEventListener('mouseover', function() {sound6.play();});
+                document.getElementById('health 1').addEventListener('mouseover', function() {sound7.play();});
+                document.getElementById('profile 1').addEventListener('mouseover', function() {sound8.play();});
+                document.getElementById('mood 1').addEventListener('mouseover', function() {sound9.play();});
+            };
+        </script>
+
+    </body>
+
+</html>
